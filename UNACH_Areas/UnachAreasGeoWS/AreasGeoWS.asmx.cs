@@ -18,13 +18,18 @@ namespace UnachAreasGeoWS
     public class AreasGeoWS : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
+        //[WebMethod]
+        //public string HelloWorld()
+        //{
+        //    return "Hola a todos";
+        //}
 
-        [WebMethod]
+        /// <summary>
+        /// Método para calcular el área de un Cuadrado
+        /// </summary>
+        /// <param name="LADO">Dato numérico decimal, de la medida de cualquier lado del cuadrado</param>
+        /// <returns>Área de la figura, en tipo Decimal</returns>
+        [WebMethod (Description = "Calcular el área de un Cuadrado")]
         public decimal cuadrado(decimal LADO)
         {
             CalqAreas A = new CalqAreas();
@@ -32,7 +37,13 @@ namespace UnachAreasGeoWS
             return A.cuadrado();
         }
 
-        [WebMethod]
+        /// <summary>
+        /// Método para calcular el área de un Triángulo
+        /// </summary>
+        /// <param name="BASE">Dato numérico decimal, de la medida de la base del triángulo</param>
+        /// <param name="ALTURA">Dato numérico decimal, de la medida de la altura del triángulo</param>
+        /// <returns>Área de la figura, en tipo Decimal</returns>
+        [WebMethod (Description = "Calcular el área de un Triángulo")]
         public decimal triangulo(decimal BASE, decimal ALTURA)
         {
             CalqAreas A = new CalqAreas();
@@ -41,7 +52,12 @@ namespace UnachAreasGeoWS
             return A.triangulo();
         }
 
-        [WebMethod]
+        /// <summary>
+        /// Método para calcular el área de un Círculo
+        /// </summary>
+        /// <param name="RADIO">Dato numérico decimal, de la medida del radio del círculo, del centro a un borde</param>
+        /// <returns>Área de la figura, en tipo Decimal</returns>
+        [WebMethod (Description = "Calcular el área de un Círculo")]
         public decimal circulo(decimal RADIO)
         {
             CalqAreas A = new CalqAreas();
